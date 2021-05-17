@@ -1,0 +1,4 @@
+hr-client/node_modules/*
+hr-client/web/*
+hr-server/node_modules/*
+hr-server/web/*

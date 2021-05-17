@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2014, 2021, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+
+<!-- ************************ IMPORTANT INFORMATION ************************************
+        This blank template contains a basic web application setup with a header and sticky footer.
+        It contains the Oracle JET framework and a default requireJS
+        configuration file to show how JET can be setup in a common application.
+        This project template can be used in conjunction with demo code from the JET
+        website to test JET component behavior and interactions.
+
+  Any CSS styling with the prefix "demo-" is for demonstration only and is not
+  provided as part of the JET framework.
+
+  Best practice patterns are provided as part of the JET website under the Samples section.
+
+  Aria Landmark role attributes are added to the different sections of the application
+  for accessibility compliance. If you change the type of content for a specific
+  section from what is defined, you should also change the role value for that
+  section to represent the appropriate content type.
+  ***************************** IMPORTANT INFORMATION ************************************ -->
+<html lang="en-us">
+  <head>
+    <title>HR Work Area Using ADF BC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
+    <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+
+    <!-- This is the main css file for the default theme -->
+    <!-- injector:theme -->
+    <link rel="stylesheet" href="css/libs/oj/v10.0.0/redwood/oj-redwood-min.css" type="text/css"/>
+    <!-- endinjector -->
+
+    <!-- This contains icon fonts used by the starter template -->
+    <link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css"/>
+    <link rel="stylesheet" id="uxiconFont" href="https://static.oracle.com/cdn/fnd/gallery/2101.3.0/images/iconfont/ojuxIconFont.min.css">
+
+    <!-- This is where you would add any app specific styling -->
+    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    
+  </head>
+  <body>
+ <!-- Template for rendering navigation items shared between nav bar and nav list -->
+ <script type="text/html" id="navTemplate">
+  <li><a href="#">
+    <span :class="[[$data.detail.iconClass]]"></span>
+    <oj-bind-text value="[[$data.detail.label]]"></oj-bind-text>
+  </a></li>
+</script>
+<div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+  <div id="pageContent" class="oj-web-applayout-page">
+    <header role="banner" class="oj-web-applayout-header">
+      <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+        <div class="oj-flex-bar-middle oj-sm-align-items-baseline">        
+          <h1>Hr App</h1>
+        </div>     
+      </div>
+    </header>
+    <div id ="mainContent" class="oj-panel oj-margin oj-flex-item">
+      <h5>Regions Information</h5>
+    <div id ="region"  data-bind ="ojModule : 'regions'" >
+    </div>
+      
+     
+    </div>
+    <footer class="oj-web-applayout-footer" role="contentinfo">
+      <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">  
+      </div>    
+      <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">  
+      </div>
+     
+    </footer>
+  </div>
+</div>
+    <script type="text/javascript">
+      // The "oj_whenReady" global variable enables a strategy that the busy context whenReady,
+      // will implicitly add a busy state, until the application calls applicationBootstrapComplete
+      // on the busy state context.
+      window["oj_whenReady"] = true;
+    </script>
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!--
+ Copyright (c) 2014, 2021, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+ <div>
+    <div id="datagrid-wrapper" style="width: 1px; min-width: 100%;"> 
+       <oj-table id="table" data="[[activityDataProvider]]" columns='[{"id": "column1", "sortable": "disabled"},
+                        {"headerText": "Region Id",
+                         "field": "RegionId", "sortable": "enabled"},
+                        {"headerText": "Region Name",
+                         "field": "RegionName", "sortable": "enabled"}]'
+                         on-first-selected-row-changed="[[firstSelectedRowChangedListener]]"
+                         selection-mode.row='single'
+                          first-selected-row='{{firstSelected}}' 
+                class="oj-sm-12 oj-lg-12 oj-flex-item oj-sm-padding-2x-horizontal">
+                <template slot='rowTemplate' data-oj-as='row'>
+                  <tr>
+                    <td>
+                     
+                    </td>
+                    <td>
+                      <div id='deptId' >
+                        <oj-bind-text value="[[row.data.RegionId]]"></oj-bind-text>
+                      </div>
+                    </td>
+                    <td>
+                      <div id="deptName" >
+                        <oj-bind-text value="[[row.data.RegionName]]"></oj-bind-text>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </oj-table>
+            </div>
+            <div>
+              <oj-form-layout id="form-container" class="oj-sm-padding-2x-top oj-sm-padding-2x-start">
+                <oj-input-text id="regionId" value="{{regionId}}" label-hint="Region Id"></oj-input-text>
+                <oj-input-text id="regionName" value="{{regionName}}" label-hint="Region Name"></oj-input-text>
+                
+              </oj-form-layout>
+              <oj-toolbar chroming='outlined'>
+                <oj-button id='addbutton' on-oj-action='[[addRow]]'>Create</oj-button>
+                <oj-button id='updateButton' on-oj-action='[[updateRow]]'>Update</oj-button>
+                <oj-button id='removeButton' on-oj-action='[[removeRow]]'>Remove</oj-button>
+            
+                </oj-toolbar>
+           </div>
+          </div>
+  
